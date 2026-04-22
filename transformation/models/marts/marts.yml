@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_opportunities
+    description: Opportunity fact table
+    columns:
+      - name: opportunity_key
+        tests:
+          - not_null
+          - unique
+
+      - name: account_key
+        tests:
+          - relationships:
+              to: ref('dim_accounts')
+              field: account_key
+
+      - name: stage_name
+        description: Sales stage of the opportunity
+        tests:
+          - accepted_values:
+              values:
+                - Prospecting
+                - Qualification
+                - Negotiation
+                - Closed Won
+                - Closed Lost
