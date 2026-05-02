@@ -1,3 +1,8 @@
+-- FACT TABLE
+-- Grain: one row per opportunity
+-- Purpose: analyze opportunity amount and stage by account
+
+
 {{ config(
     materialized='table',
     tags=['fact', 'opportunity', 'salesforce']
