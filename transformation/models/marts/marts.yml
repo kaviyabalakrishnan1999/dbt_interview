@@ -2,14 +2,20 @@ version: 2
 
 models:
   - name: fct_opportunities
-    description: Opportunity fact table
+    description: >
+      Fact table representing Salesforce opportunities.
+      Each row corresponds to one opportunity and contains
+      opportunity-level measures and attributes.
+
     columns:
       - name: opportunity_key
+        description: Surrogate primary key for the opportunity fact table
         tests:
           - not_null
           - unique
 
       - name: account_key
+        description: Surrogate key linking the opportunity to the account dimension
         tests:
           - relationships:
               to: ref('dim_accounts')
@@ -25,3 +31,16 @@ models:
                 - Negotiation
                 - Closed Won
                 - Closed Lost
+
+  - name: dim_accounts
+    description: >
+      Dimension table representing Salesforce accounts.
+      Contains one row per account with descriptive attributes
+      used to analyze opportunities.
+
+    columns:
+      - name: account_key
+        description: Surrogate primary key for the account dimension
+        tests:
+          - not_null
+          - unique
