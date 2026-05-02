@@ -1,3 +1,7 @@
+-- DIMENSION TABLE
+-- Purpose: provides a reusable calendar dimension for time-based analysis
+-- Note: included as a standard analytics pattern, not required for core logic
+
 {{ config(
     materialized='table',
     tags=['dimension', 'date']
