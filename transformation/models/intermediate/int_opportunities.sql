@@ -1,3 +1,7 @@
+-- INTERMEDIATE MODEL
+-- Grain: one row per opportunity
+-- Purpose: clean and standardize opportunity data from staging
+
 {{ config(
     materialized='table',
     tags=['intermediate', 'salesforce']
