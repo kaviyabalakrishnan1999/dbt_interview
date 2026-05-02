@@ -1,3 +1,7 @@
+-- DIMENSION TABLE
+-- Grain: one row per account
+-- Purpose: provides account attributes for opportunity analysis
+
 {{ config(
     materialized='table',
     tags=['dimension', 'account', 'salesforce']
