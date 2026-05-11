@@ -1,4 +1,5 @@
 -- DIMENSION TABLE
+-- Grain: one row per date
 -- Purpose: provides a reusable calendar dimension for time-based analysis
 -- Note: included as a standard analytics pattern, not required for core logic
 
