@@ -14,4 +14,4 @@ select
     industry,
     billing_country,
     created_date
-from {{ ref('stg_salesforce__account') }};
+from {{ ref('stg_salesforce__account') }}
