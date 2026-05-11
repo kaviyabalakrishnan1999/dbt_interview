@@ -2,7 +2,6 @@
 -- Grain: one row per opportunity
 -- Purpose: analyze opportunity amount and stage by account
 
-
 {{ config(
     materialized='table',
     tags=['fact', 'opportunity', 'salesforce']
@@ -19,4 +18,4 @@ select
     o.created_date
 from {{ ref('int_opportunities') }} o
 left join {{ ref('dim_accounts') }} a
-  on o.account_id = a.account_id;
+  on o.account_id = a.account_id
